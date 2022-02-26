@@ -3,7 +3,7 @@ FROM openjdk:8u151-stretch
 RUN apt-get update \
     && apt-get -y install openssh-client \
     && apt-get install -y git \
-    && apt-get install -y maven \
+    && apt-get install -y maven
 
 # Install docker 18.03
 RUN apt-get -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common
