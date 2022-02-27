@@ -2,6 +2,7 @@ pipeline {
     agent {
        docker {
          image 'mishiz/devops1102-build'
+         args '-v /var/run/docker.sock:/var/run/docker.sock'
        }
     }
 
