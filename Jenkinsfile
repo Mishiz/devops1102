@@ -26,7 +26,7 @@ pipeline {
           sh 'cp ./target/hello-1.0.war ./app/ROOT.war && cd ./app && docker build --tag=devops1102-app .'
           sh 'docker tag devops1102-app mishiz/devops1102-app'
 
-          withDockerRegistry(credentialsId: '3201def3-fc62-4ba0-a60e-a8acb8c7cc0a', url: 'https://hub.docker.com')  {
+          withDockerRegistry(credentialsId: '3201def3-fc62-4ba0-a60e-a8acb8c7cc0a', url: '')  {
           sh 'docker push mishiz/devops1102-app'
           }
 
