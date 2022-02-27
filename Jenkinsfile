@@ -19,14 +19,6 @@ pipeline {
         }
       }
 
-      stage('Make docker image') {
-        steps {
-          git 'https://github.com/Mishiz/devops1102.git'
-          sh 'cp ./target/hello-1.0.war ./app/ROOT.war && cd ./app && docker build --tag=devops1102-app .'
-          sh '''docker tag devops1102-app mishiz/devops1102-app && docker push mishiz/devops1102-app'''
-
-        }
-      }
 
       stage(' Run docker on prod ') {
         steps {
@@ -37,6 +29,17 @@ pipeline {
         EOF'''
         }
       }
+
+      stage('Make docker image') {
+        steps {
+          git 'https://github.com/Mishiz/devops1102.git'
+          sh 'cp ./target/hello-1.0.war ./app/ROOT.war && cd ./app && docker build --tag=devops1102-app .'
+          sh '''docker tag devops1102-app mishiz/devops1102-app && docker push mishiz/devops1102-app'''
+
+        }
+      }
+
+
 
 
     }
