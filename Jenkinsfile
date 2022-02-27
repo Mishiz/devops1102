@@ -27,7 +27,7 @@ pipeline {
           sh 'docker tag devops1102-app mishiz/devops1102-app'
 
           withDockerRegistry(credentialsId: '3201def3-fc62-4ba0-a60e-a8acb8c7cc0a', url: '')  {
-          dockerImage.push()
+          dockerImage.push(mishiz/devops1102-app)
           }
 
 
