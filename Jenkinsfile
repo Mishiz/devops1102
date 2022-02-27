@@ -3,7 +3,6 @@ pipeline {
        docker {
          image 'mishiz/devops1102-build'
          args '-v /var/run/docker.sock:/var/run/docker.sock'
-         args '-v .ssh/id_rsa.pub:.ssh/id_rsa.pub'
 
        }
     }
