@@ -22,7 +22,7 @@ pipeline {
 
       stage(' Run docker on prod ') {
         steps {
-      #  sh 'ssh-keyscan -H 10.114.0.3 >> ~/.ssh/known_hosts'
+
         sh '''ssh root@10.114.0.3 << EOF
         docker pull mishiz/devops1102-app
         docker run -d -p 8080:8080 mishiz/devops1102-app
