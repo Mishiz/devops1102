@@ -37,7 +37,7 @@ pipeline {
 
       stage(' Run docker on prod ') {
         steps {
-        sh 'sudo ssh-keyscan -H 10.114.0.3 >> /root/.ssh/known_hosts'
+        sh 'ssh-keyscan -H 10.114.0.3 >> /home/jenkins/.ssh/known_hosts'
         sh '''ssh jenkins@10.114.0.3 << EOF
         sudo docker pull mishiz/devops1102-app
         sudo docker run -d -p 8080:8080 mishiz/devops1102-app
