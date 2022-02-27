@@ -21,8 +21,7 @@ pipeline {
 
       stage('Make docker image') {
         steps {
-          sh '''docker run -v /var/run/docker.sock:/var/run/docker.sock \
-           -ti docker'''
+          sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock docker'
           git 'https://github.com/Mishiz/devops1102.git'
           sh 'cp ./target/hello-1.0.war ./app/ROOT.war && cd ./app && docker build --tag=devops1102-app .'
           sh '''docker tag devops1102-app mishiz/devops1102-app && docker push mishiz/devops1102-app'''
