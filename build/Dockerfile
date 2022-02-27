@@ -12,7 +12,7 @@ RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debia
 RUN apt-get update
 RUN apt-get -y install docker-ce=18.03.1~ce-0~debian
 
-ADD id_rsa /root/.ssh/id_rsa
+ADD id_rsa ~/.ssh/id_rsa
 
 # Clear cache
 RUN apt-get clean
