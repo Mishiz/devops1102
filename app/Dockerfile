@@ -1,6 +1,6 @@
 FROM alpine:3.12
 RUN apk add --no-cache openjdk8-jre-base \
-    && apk add --no-cache openssh
+    && apk add --no-cache openssh \
     && rm -rf /tmp/* /var/cache/apk/
 EXPOSE 8080
 
