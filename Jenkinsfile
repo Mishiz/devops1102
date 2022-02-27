@@ -37,10 +37,10 @@ pipeline {
 
       stage(' Run docker on prod ') {
         steps {
-        sh '''$USER@ssh 10.114.0.3 << EOF
-        docker pull mishiz/devops1102-app
-        docker run -d -p 8080:8080 mishiz/devops1102-app
-        EOF'''
+        sh '$USER@ssh 10.114.0.3'
+        sh 'docker pull mishiz/devops1102-app'
+        sh 'docker run -d -p 8080:8080 mishiz/devops1102-app'
+
         }
       }
 
