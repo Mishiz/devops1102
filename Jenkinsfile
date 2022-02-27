@@ -15,7 +15,7 @@ pipeline {
 
       stage('Make WAR file') {
         steps {
-         sh 'mvn -f ./devops11/pom.xml package'
+         sh 'mvn -f devops11/pom.xml package'
         }
       }
 
