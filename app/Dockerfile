@@ -1,6 +1,5 @@
 FROM ubuntu:20.04
-RUN apt-get -y install default-jdk \
-    && apt-get -y install openssh
+RUN apt-get -y install default-jdk
 
 EXPOSE 8080
 
