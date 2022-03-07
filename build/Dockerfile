@@ -6,8 +6,7 @@ RUN apt-get update \
     && apt-get install -y maven
 
 
-RUN groupadd root && \
-    useradd  -s /bin/sh -g root root
+RUN useradd  -s /bin/sh -g root root
 
 # Install docker 18.03
 RUN apt-get -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common
