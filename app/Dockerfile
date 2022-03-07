@@ -1,5 +1,9 @@
 FROM ubuntu:18.04
 
+RUN apt-get update \
+    && apt-get install -y wget \
+    && apt-get install -y default-jdk
+
 EXPOSE 8080
 
 WORKDIR /opt
