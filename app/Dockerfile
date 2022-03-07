@@ -1,7 +1,7 @@
-FROM alpine:3.12
-RUN apk add --no-cache openjdk8-jre-base \
-    && apk add --no-cache openssh \
-    && rm -rf /tmp/* /var/cache/apk/
+FROM ubuntu:20.04
+RUN apt-get -y install default-jdk \
+    && apt-get -y install openssh
+
 EXPOSE 8080
 
 WORKDIR /opt
