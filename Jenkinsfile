@@ -3,6 +3,7 @@ pipeline {
        docker {
          image 'mishiz/devops1102-build'
          args '-v /var/run/docker.sock:/var/run/docker.sock'
+         additionalBuildArgs '--build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g)'
 
        }
     }
