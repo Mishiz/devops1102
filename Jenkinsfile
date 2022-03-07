@@ -34,8 +34,10 @@ pipeline {
 
         }
       }
+      }
 
       stage(' Run docker on prod ') {
+        agent any
         steps {
         sh 'ssh root@10.114.0.3'
         sh 'docker pull mishiz/devops1102-app'
@@ -45,5 +47,5 @@ pipeline {
       }
 
 
-    }
+
 }
